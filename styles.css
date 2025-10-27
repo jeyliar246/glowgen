@@ -483,7 +483,7 @@ body {
     }
 
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px;
     }
 
@@ -511,7 +511,7 @@ body {
     }
 
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .bottom-nav-item span {
