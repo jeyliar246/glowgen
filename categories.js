@@ -2,6 +2,7 @@
 
 let allProducts = [];
 let filteredProducts = [];
+let viewMode = 'grid'; // 'grid' or 'list'
 
 // Load products and display
 async function loadProducts() {
@@ -43,6 +44,7 @@ function filterByCategory(category) {
 // Display products
 function displayProducts(products) {
     const grid = document.getElementById('productsGrid');
+    grid.className = `products-grid ${viewMode}-view`;
     grid.innerHTML = '';
     
     products.forEach(product => {
@@ -65,6 +67,7 @@ function createProductCard(product) {
             <img src="${product.image}" alt="${product.name}">
         </div>
         <div class="product-info">
+            ${product.store ? `<div class="store-label"><i class="fas fa-store"></i><span>${product.store}</span></div>` : ''}
             <h3>${product.name}</h3>
             <p class="brand">${product.brand}</p>
             <div class="rating">
@@ -125,15 +128,15 @@ document.getElementById('sortSelect').addEventListener('change', function() {
 // View toggle (grid/list)
 document.querySelectorAll('.view-btn').forEach(btn => {
     btn.addEventListener('click', function() {
+        const mode = this.dataset.view;
+        viewMode = mode;
+        
         document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         
-        const grid = document.getElementById('productsGrid');
-        if (this.dataset.view === 'list') {
-            grid.classList.add('list-view');
-        } else {
-            grid.classList.remove('list-view');
-        }
+        // Redisplay products with new view
+        const category = filteredProducts.length > 0 ? filteredProducts : allProducts;
+        displayProducts(category);
     });
 });
 

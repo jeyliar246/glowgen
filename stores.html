@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories - GlowGen</title>
+    <title>Our Stores - GlowGen</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="additional-styles.css">
     <link rel="stylesheet" href="stores-styles.css">
@@ -41,39 +41,42 @@
             <a href="categories.html?cat=Sunscreen" class="category-tab">Sunscreen</a>
             <a href="categories.html?cat=Toners" class="category-tab">Toners</a>
             <a href="categories.html?cat=Eye Care" class="category-tab">Eye Care</a>
-            <a href="stores.html" class="category-tab">Stores</a>
         </div>
     </nav>
 
-    <!-- Categories Section -->
-    <section class="categories-section">
+    <!-- Stores Section -->
+    <section class="stores-section">
         <div class="container">
-            <h1 class="page-title" id="pageTitle">All Categories</h1>
-            <p class="page-subtitle" id="pageSubtitle">Explore our complete collection of luxury skincare products</p>
+            <h1 class="page-title">Our Stores</h1>
+            <p class="page-subtitle">Shop from our trusted partner stores for authentic skincare products</p>
 
-            <div class="filter-bar">
-                <div class="sort-options">
-                    <label>Sort by:</label>
-                    <select id="sortSelect">
-                        <option value="featured">Featured</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="rating">Highest Rated</option>
-                        <option value="newest">Newest</option>
-                    </select>
-                </div>
-                <div class="view-options">
-                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
-                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+            <div class="stores-grid" id="storesGrid">
+                <!-- Stores will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products from Selected Store -->
+    <section class="store-products-section" id="storeProductsSection" style="display: none;">
+        <div class="container">
+            <div class="store-header">
+                <button class="back-btn" onclick="showAllStores()">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to All Stores
+                </button>
+                <h2 id="selectedStoreName"></h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid" onclick="switchView('grid')">
+                        <i class="fas fa-th"></i> Grid
+                    </button>
+                    <button class="view-btn" data-view="list" onclick="switchView('list')">
+                        <i class="fas fa-list"></i> List
+                    </button>
                 </div>
             </div>
 
-            <div class="products-grid" id="productsGrid">
+            <div class="products-grid" id="storeProductsGrid">
                 <!-- Products will be loaded here -->
-            </div>
-
-            <div class="pagination" id="pagination">
-                <!-- Pagination will be added here -->
             </div>
         </div>
     </section>
@@ -84,7 +87,7 @@
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="categories.html" class="bottom-nav-item active">
+        <a href="categories.html" class="bottom-nav-item">
             <i class="fas fa-th-large"></i>
             <span>Categories</span>
         </a>
@@ -99,7 +102,7 @@
     </nav>
 
     <script src="script.js"></script>
-    <script src="categories.js"></script>
+    <script src="stores.js"></script>
 </body>
 </html>
 

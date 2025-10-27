@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlowGen - Luxury Skincare Marketplace</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stores-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -32,6 +33,7 @@
     <nav class="category-nav">
         <div class="category-container">
             <a href="index.html" class="category-tab active">All</a>
+            <a href="stores.html" class="category-tab">Stores</a>
             <a href="categories.html?cat=Cleansers" class="category-tab">Cleansers</a>
             <a href="categories.html?cat=Serums" class="category-tab">Serums</a>
             <a href="categories.html?cat=Moisturizers" class="category-tab">Moisturizers</a>
@@ -86,8 +88,18 @@
     </section>
 
     <!-- Featured Products -->
-    <section class="products-section">
-        <h2 class="section-title">Best Sellers</h2>
+    <section class="products-section category-filter-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h2 class="section-title" style="margin: 0;">Best Sellers</h2>
+            <div class="home-view-toggle">
+                <button class="view-btn active" data-view="grid" onclick="switchView('grid')">
+                    <i class="fas fa-th"></i>
+                </button>
+                <button class="view-btn" data-view="list" onclick="switchView('list')">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
+        </div>
         <div class="products-grid" id="productsGrid">
             <div class="product-card" onclick="location.href='product-detail.html?id=1'">
                 <div class="product-badge">Best Seller</div>
@@ -252,5 +264,6 @@
     </nav>
 
     <script src="script.js"></script>
+    <script src="homepage.js"></script>
 </body>
 </html>
