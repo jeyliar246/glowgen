@@ -1,0 +1,257 @@
+/* Dermatologist Page Styles */
+
+.dermatologist-section {
+    padding: 40px 0;
+}
+
+.derm-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--light-yellow) 100%);
+    border-radius: 25px;
+    padding: 60px 50px;
+    margin: 40px 0;
+}
+
+.derm-hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: var(--black);
+}
+
+.derm-hero-content p {
+    font-size: 20px;
+    color: var(--black);
+    opacity: 0.8;
+}
+
+.derm-hero-image {
+    font-size: 120px;
+    opacity: 0.3;
+}
+
+.consultation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.option-card {
+    background: var(--white);
+    border: 2px solid var(--pastel-pink);
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.option-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(255, 158, 201, 0.25);
+    border-color: var(--soft-pink);
+}
+
+.option-card.featured {
+    border: 3px solid var(--soft-pink);
+    transform: scale(1.05);
+}
+
+.option-card.featured:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.option-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--soft-pink);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.option-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.option-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.option-card p {
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.option-card .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--soft-pink);
+    margin: 25px 0;
+}
+
+.book-btn {
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.book-btn:hover {
+    background: var(--soft-pink);
+}
+
+.available-doctors {
+    margin: 60px 0;
+}
+
+.available-doctors h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.doctor-card {
+    background: var(--white);
+    border: 2px solid var(--pastel-pink);
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 158, 201, 0.2);
+    border-color: var(--soft-pink);
+}
+
+.doctor-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--soft-pink);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.doctor-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.doctor-specialty {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.doctor-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 15px 0;
+}
+
+.doctor-rating i {
+    color: var(--warm-yellow);
+    font-size: 14px;
+}
+
+.doctor-rating span {
+    color: var(--gray);
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.doctor-experience {
+    color: var(--soft-pink);
+    font-weight: 600;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.consult-btn {
+    width: 100%;
+    background: var(--soft-pink);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.consult-btn:hover {
+    background: var(--black);
+}
+
+@media (max-width: 1024px) {
+    .derm-hero {
+        flex-direction: column;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .derm-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .derm-hero-image {
+        font-size: 80px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .derm-hero-content h1 {
+        font-size: 28px;
+    }
+
+    .derm-hero-content p {
+        font-size: 16px;
+    }
+
+    .consultation-options {
+        grid-template-columns: 1fr;
+    }
+
+    .option-card.featured {
+        transform: scale(1);
+    }
+
+    .doctors-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

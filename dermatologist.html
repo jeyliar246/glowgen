@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult a Dermatologist - GlowGen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="additional-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-sparkles"></i>
+                <span>GlowGen</span>
+            </a>
+            <div class="search-bar mobile-search">
+                <input type="text" placeholder="Search products..." id="searchInput">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-icons">
+                <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+                <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-overlay" onclick="closeDrawer()"></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <h3>Menu</h3>
+                <button class="close-drawer" onclick="closeDrawer()"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="drawer-nav">
+                <a href="index.html" class="drawer-nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="categories.html" class="drawer-nav-item">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                </a>
+                <a href="stores.html" class="drawer-nav-item">
+                    <i class="fas fa-store"></i>
+                    <span>Stores</span>
+                </a>
+                <a href="dermatologist.html" class="drawer-nav-item active">
+                    <i class="fas fa-user-doctor"></i>
+                    <span>Consult Dermatologist</span>
+                </a>
+                <a href="wishlist.html" class="drawer-nav-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Wishlist</span>
+                    <span class="badge">0</span>
+                </a>
+                <a href="cart.html" class="drawer-nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Shopping Cart</span>
+                    <span class="cart-count badge">0</span>
+                </a>
+                <a href="profile.html" class="drawer-nav-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="category-container">
+            <a href="index.html" class="category-tab">All</a>
+            <a href="categories.html?cat=Cleansers" class="category-tab">Cleansers</a>
+            <a href="categories.html?cat=Serums" class="category-tab">Serums</a>
+            <a href="categories.html?cat=Moisturizers" class="category-tab">Moisturizers</a>
+            <a href="categories.html?cat=Masks" class="category-tab">Masks</a>
+            <a href="categories.html?cat=Sunscreen" class="category-tab">Sunscreen</a>
+            <a href="categories.html?cat=Toners" class="category-tab">Toners</a>
+            <a href="categories.html?cat=Eye Care" class="category-tab">Eye Care</a>
+            <a href="stores.html" class="category-tab">Stores</a>
+            <a href="dermatologist.html" class="category-tab active">Dermatologist</a>
+        </div>
+    </nav>
+
+    <!-- Dermatologist Section -->
+    <section class="dermatologist-section">
+        <div class="container">
+            <div class="derm-hero">
+                <div class="derm-hero-content">
+                    <h1>Consult with Expert Dermatologists</h1>
+                    <p>Get personalized skincare advice from board-certified dermatologists</p>
+                </div>
+                <div class="derm-hero-image">
+                    <i class="fas fa-user-doctor"></i>
+                </div>
+            </div>
+
+            <div class="consultation-options">
+                <div class="option-card">
+                    <div class="option-icon">💬</div>
+                    <h3>Chat Consultation</h3>
+                    <p>Chat with a dermatologist for quick skincare questions</p>
+                    <p class="price">₦5,000</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <div class="option-card featured">
+                    <div class="option-badge">Popular</div>
+                    <div class="option-icon">📹</div>
+                    <h3>Video Consultation</h3>
+                    <p>Video call with a dermatologist for detailed consultation</p>
+                    <p class="price">₦15,000</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+
+                <div class="option-card">
+                    <div class="option-icon">🏥</div>
+                    <h3>In-Person Visit</h3>
+                    <p>Schedule an appointment at our partner clinics</p>
+                    <p class="price">₦25,000</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+
+            <div class="available-doctors">
+                <h2>Available Dermatologists</h2>
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <div class="doctor-avatar">DA</div>
+                        <h3>Dr. Amanda Okoro</h3>
+                        <p class="doctor-specialty">Board Certified Dermatologist</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (156)</span>
+                        </div>
+                        <p class="doctor-experience">15+ years experience</p>
+                        <button class="consult-btn">Consult Now</button>
+                    </div>
+
+                    <div class="doctor-card">
+                        <div class="doctor-avatar">DK</div>
+                        <h3>Dr. David Koroma</h3>
+                        <p class="doctor-specialty">Cosmetic Dermatologist</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8 (98)</span>
+                        </div>
+                        <p class="doctor-experience">12+ years experience</p>
+                        <button class="consult-btn">Consult Now</button>
+                    </div>
+
+                    <div class="doctor-card">
+                        <div class="doctor-avatar">FO</div>
+                        <h3>Dr. Faith Okafor</h3>
+                        <p class="doctor-specialty">Medical Dermatologist</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (234)</span>
+                        </div>
+                        <p class="doctor-experience">18+ years experience</p>
+                        <button class="consult-btn">Consult Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="categories.html" class="bottom-nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="wishlist.html" class="bottom-nav-item">
+            <i class="fas fa-heart"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="dermatologist.html" class="bottom-nav-item active">
+            <i class="fas fa-user-doctor"></i>
+            <span>Dermatologist</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script src="drawer.js"></script>
+</body>
+</html>
+
