@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowGen - Luxury Skincare Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-sparkles"></i>
+                <span>GlowGen</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for serums, creams, brands..." id="searchInput">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-icons">
+                <a href="#" class="nav-icon"><i class="fas fa-heart"></i></a>
+                <a href="#" class="nav-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+                <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="category-container">
+            <a href="#" class="category-tab active">All</a>
+            <a href="#" class="category-tab">Cleansers</a>
+            <a href="#" class="category-tab">Serums</a>
+            <a href="#" class="category-tab">Moisturizers</a>
+            <a href="#" class="category-tab">Masks</a>
+            <a href="#" class="category-tab">Sunscreen</a>
+            <a href="#" class="category-tab">Toners</a>
+            <a href="#" class="category-tab">Eye Care</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-section">
+        <div class="hero-slide active">
+            <div class="hero-content">
+                <h2>Glow-Up Your Routine</h2>
+                <p>Discover luxury skincare from the world's best brands</p>
+                <button class="cta-button">Shop Now</button>
+            </div>
+        </div>
+        <div class="hero-slide">
+            <div class="hero-content">
+                <h2>Fresh Summer Glow</h2>
+                <p>New arrivals from La Mer, Drunk Elephant & Glossier</p>
+                <button class="cta-button">Explore</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Brands Section -->
+    <section class="brands-section">
+        <h2 class="section-title">Top Skincare Brands</h2>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-logo">LA MER</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">Drunk Elephant</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">Glossier</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">The Ordinary</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">SK-II</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">Fenty Skin</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products-section">
+        <h2 class="section-title">Best Sellers</h2>
+        <div class="products-grid" id="productsGrid">
+            <div class="product-card">
+                <div class="product-badge">Best Seller</div>
+                <div class="product-image" style="background: linear-gradient(135deg, #ff9ec9 0%, #ffe5f0 100%);">
+                    <i class="fas fa-sparkles"></i>
+                </div>
+                <div class="product-info">
+                    <h3>Glow Serum</h3>
+                    <p class="brand">Glossier</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.9 (234)</span>
+                    </div>
+                    <p class="price">$28.00</p>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #ffd93d 0%, #ffeacc 100%);">
+                    <i class="fas fa-droplet"></i>
+                </div>
+                <div class="product-info">
+                    <h3>Vitamin C Serum</h3>
+                    <p class="brand">The Ordinary</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>4.6 (189)</span>
+                    </div>
+                    <p class="price">$22.00</p>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <div class="product-image" style="background: linear-gradient(135deg, #ff9ec9 0%, #ffe5f0 100%);">
+                    <i class="fas fa-flower"></i>
+                </div>
+                <div class="product-info">
+                    <h3>Hydrating Moisturizer</h3>
+                    <p class="brand">Drunk Elephant</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.8 (456)</span>
+                    </div>
+                    <p class="price">$52.00</p>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #ffd93d 0%, #ffeacc 100%);">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <div class="product-info">
+                    <h3>Gentle Cleanser</h3>
+                    <p class="brand">La Mer</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.7 (312)</span>
+                    </div>
+                    <p class="price">$95.00</p>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #ff9ec9 0%, #ffe5f0 100%);">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="product-info">
+                    <h3>Eye Cream</h3>
+                    <p class="brand">SK-II</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.9 (567)</span>
+                    </div>
+                    <p class="price">$165.00</p>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #ffd93d 0%, #ffeacc 100%);">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="product-info">
+                    <h3>SPF 50 Sunscreen</h3>
+                    <p class="brand">Fenty Skin</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>4.5 (278)</span>
+                    </div>
+                    <p class="price">$35.00</p>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="#" class="bottom-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="fas fa-heart"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
