@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="additional-styles.css">
     <link rel="stylesheet" href="stores-styles.css">
+    <link rel="stylesheet" href="mobile-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -18,7 +19,7 @@
                 <i class="fas fa-sparkles"></i>
                 <span>GlowGen</span>
             </a>
-            <div class="search-bar">
+            <div class="search-bar mobile-search">
                 <input type="text" placeholder="Search for serums, creams, brands..." id="searchInput">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
@@ -26,9 +27,55 @@
                 <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i></a>
                 <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
                 <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-overlay" onclick="closeDrawer()"></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <h3>Menu</h3>
+                <button class="close-drawer" onclick="closeDrawer()"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="drawer-nav">
+                <a href="index.html" class="drawer-nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="categories.html" class="drawer-nav-item active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                </a>
+                <a href="stores.html" class="drawer-nav-item">
+                    <i class="fas fa-store"></i>
+                    <span>Stores</span>
+                </a>
+                <a href="dermatologist.html" class="drawer-nav-item">
+                    <i class="fas fa-user-doctor"></i>
+                    <span>Consult Dermatologist</span>
+                </a>
+                <a href="wishlist.html" class="drawer-nav-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Wishlist</span>
+                    <span class="badge">0</span>
+                </a>
+                <a href="cart.html" class="drawer-nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Shopping Cart</span>
+                    <span class="cart-count badge">0</span>
+                </a>
+                <a href="profile.html" class="drawer-nav-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+        </div>
+    </div>
 
     <!-- Category Navigation -->
     <nav class="category-nav">
