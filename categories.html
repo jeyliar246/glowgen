@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - GlowGen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="additional-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-sparkles"></i>
+                <span>GlowGen</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for serums, creams, brands..." id="searchInput">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-icons">
+                <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+                <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="category-container">
+            <a href="index.html" class="category-tab">All</a>
+            <a href="categories.html?cat=Cleansers" class="category-tab">Cleansers</a>
+            <a href="categories.html?cat=Serums" class="category-tab">Serums</a>
+            <a href="categories.html?cat=Moisturizers" class="category-tab">Moisturizers</a>
+            <a href="categories.html?cat=Masks" class="category-tab">Masks</a>
+            <a href="categories.html?cat=Sunscreen" class="category-tab">Sunscreen</a>
+            <a href="categories.html?cat=Toners" class="category-tab">Toners</a>
+            <a href="categories.html?cat=Eye Care" class="category-tab">Eye Care</a>
+        </div>
+    </nav>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h1 class="page-title" id="pageTitle">All Categories</h1>
+            <p class="page-subtitle" id="pageSubtitle">Explore our complete collection of luxury skincare products</p>
+
+            <div class="filter-bar">
+                <div class="sort-options">
+                    <label>Sort by:</label>
+                    <select id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="categories.html" class="bottom-nav-item active">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="wishlist.html" class="bottom-nav-item">
+            <i class="fas fa-heart"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="profile.html" class="bottom-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script src="categories.js"></script>
+</body>
+</html>
+

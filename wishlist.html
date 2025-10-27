@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - GlowGen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="additional-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-sparkles"></i>
+                <span>GlowGen</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for serums, creams, brands..." id="searchInput">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-icons">
+                <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+                <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="category-container">
+            <a href="index.html" class="category-tab">All</a>
+            <a href="categories.html?cat=Cleansers" class="category-tab">Cleansers</a>
+            <a href="categories.html?cat=Serums" class="category-tab">Serums</a>
+            <a href="categories.html?cat=Moisturizers" class="category-tab">Moisturizers</a>
+            <a href="categories.html?cat=Masks" class="category-tab">Masks</a>
+            <a href="categories.html?cat=Sunscreen" class="category-tab">Sunscreen</a>
+            <a href="categories.html?cat=Toners" class="category-tab">Toners</a>
+            <a href="categories.html?cat=Eye Care" class="category-tab">Eye Care</a>
+        </div>
+    </nav>
+
+    <!-- Wishlist Section -->
+    <section class="wishlist-section">
+        <div class="container">
+            <h1 class="page-title">My Wishlist</h1>
+
+            <div id="wishlistItems" class="wishlist-grid">
+                <!-- Wishlist items will be loaded here -->
+            </div>
+
+            <div class="empty-wishlist" id="emptyWishlist">
+                <i class="far fa-heart"></i>
+                <h2>Your wishlist is empty</h2>
+                <p>Start adding items you love to your wishlist!</p>
+                <a href="index.html" class="cta-button">Continue Shopping</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="categories.html" class="bottom-nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="wishlist.html" class="bottom-nav-item active">
+            <i class="fas fa-heart"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="profile.html" class="bottom-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script src="wishlist.js"></script>
+</body>
+</html>
+

@@ -21,9 +21,9 @@
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
             <div class="nav-icons">
-                <a href="#" class="nav-icon"><i class="fas fa-heart"></i></a>
-                <a href="#" class="nav-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
-                <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+                <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
             </div>
         </div>
     </nav>
@@ -31,14 +31,14 @@
     <!-- Category Navigation -->
     <nav class="category-nav">
         <div class="category-container">
-            <a href="#" class="category-tab active">All</a>
-            <a href="#" class="category-tab">Cleansers</a>
-            <a href="#" class="category-tab">Serums</a>
-            <a href="#" class="category-tab">Moisturizers</a>
-            <a href="#" class="category-tab">Masks</a>
-            <a href="#" class="category-tab">Sunscreen</a>
-            <a href="#" class="category-tab">Toners</a>
-            <a href="#" class="category-tab">Eye Care</a>
+            <a href="index.html" class="category-tab active">All</a>
+            <a href="categories.html?cat=Cleansers" class="category-tab">Cleansers</a>
+            <a href="categories.html?cat=Serums" class="category-tab">Serums</a>
+            <a href="categories.html?cat=Moisturizers" class="category-tab">Moisturizers</a>
+            <a href="categories.html?cat=Masks" class="category-tab">Masks</a>
+            <a href="categories.html?cat=Sunscreen" class="category-tab">Sunscreen</a>
+            <a href="categories.html?cat=Toners" class="category-tab">Toners</a>
+            <a href="categories.html?cat=Eye Care" class="category-tab">Eye Care</a>
         </div>
     </nav>
 
@@ -89,7 +89,7 @@
     <section class="products-section">
         <h2 class="section-title">Best Sellers</h2>
         <div class="products-grid" id="productsGrid">
-            <div class="product-card">
+            <div class="product-card" onclick="location.href='product-detail.html?id=1'">
                 <div class="product-badge">Best Seller</div>
                 <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400" alt="Glow Serum">
@@ -130,13 +130,13 @@
                     </div>
                     <p class="price">₦33,000</p>
                 </div>
-                <button class="add-to-cart-btn">
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(2)">
                     <i class="fas fa-shopping-bag"></i>
                     Add to Cart
                 </button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" onclick="location.href='product-detail.html?id=3'">
                 <div class="product-badge">New</div>
                 <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400" alt="Hydrating Moisturizer">
@@ -177,13 +177,13 @@
                     </div>
                     <p class="price">₦142,500</p>
                 </div>
-                <button class="add-to-cart-btn">
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(4)">
                     <i class="fas fa-shopping-bag"></i>
                     Add to Cart
                 </button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" onclick="location.href='product-detail.html?id=5'">
                 <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400" alt="Eye Cream">
                 </div>
@@ -200,13 +200,13 @@
                     </div>
                     <p class="price">₦247,500</p>
                 </div>
-                <button class="add-to-cart-btn">
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(5)">
                     <i class="fas fa-shopping-bag"></i>
                     Add to Cart
                 </button>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" onclick="location.href='product-detail.html?id=6'">
                 <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400" alt="SPF 50 Sunscreen">
                 </div>
@@ -223,7 +223,7 @@
                     </div>
                     <p class="price">₦52,500</p>
                 </div>
-                <button class="add-to-cart-btn">
+                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(6)">
                     <i class="fas fa-shopping-bag"></i>
                     Add to Cart
                 </button>
@@ -233,19 +233,19 @@
 
     <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
-        <a href="#" class="bottom-nav-item active">
+        <a href="index.html" class="bottom-nav-item active">
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="#" class="bottom-nav-item">
+        <a href="categories.html" class="bottom-nav-item">
             <i class="fas fa-th-large"></i>
             <span>Categories</span>
         </a>
-        <a href="#" class="bottom-nav-item">
+        <a href="wishlist.html" class="bottom-nav-item">
             <i class="fas fa-heart"></i>
             <span>Wishlist</span>
         </a>
-        <a href="#" class="bottom-nav-item">
+        <a href="profile.html" class="bottom-nav-item">
             <i class="fas fa-user"></i>
             <span>Profile</span>
         </a>

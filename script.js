@@ -1,96 +1,119 @@
-// Shopping Cart Functionality
-let cartCount = 0;
+// Global Shopping Cart and Wishlist Functions
+
+// Load cart from localStorage
+function getCart() {
+    const saved = localStorage.getItem('cart');
+    return saved ? JSON.parse(saved) : [];
+}
+
+// Save cart to localStorage
+function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Add to cart
+function addToCart(productId) {
+    let cart = getCart();
+    const existingItem = cart.find(item => item.id === productId);
+    
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ id: productId, quantity: 1 });
+    }
+    
+    saveCart(cart);
+    updateCartCount();
+}
+
+// Load wishlist from localStorage
+function getWishlist() {
+    const saved = localStorage.getItem('wishlist');
+    return saved ? JSON.parse(saved) : [];
+}
+
+// Save wishlist to localStorage
+function saveWishlist(wishlist) {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+}
+
+// Add to wishlist
+function addToWishlist(productId) {
+    let wishlist = getWishlist();
+    if (!wishlist.includes(productId)) {
+        wishlist.push(productId);
+        saveWishlist(wishlist);
+    }
+}
+
+// Remove from wishlist
+function removeFromWishlist(productId) {
+    let wishlist = getWishlist();
+    wishlist = wishlist.filter(id => id !== productId);
+    saveWishlist(wishlist);
+}
 
 // Update cart count
 function updateCartCount() {
-    document.querySelector('.cart-count').textContent = cartCount;
+    const cart = getCart();
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCountElements = document.querySelectorAll('.cart-count');
+    cartCountElements.forEach(el => {
+        if (el) el.textContent = total;
+    });
 }
 
-// Add to cart functionality
-document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        cartCount++;
-        updateCartCount();
-        
-        // Add visual feedback
-        this.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            this.style.transform = 'scale(1)';
-        }, 150);
-        
-        // Show success message (optional)
-        const productCard = this.closest('.product-card');
-        const productName = productCard.querySelector('h3').textContent;
-        showNotification(`${productName} added to cart!`);
-    });
-});
-
 // Search functionality
-document.getElementById('searchInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        performSearch(this.value);
-    }
-});
+if (document.getElementById('searchInput')) {
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch(this.value);
+        }
+    });
+}
 
-document.querySelector('.search-btn').addEventListener('click', function() {
-    const searchValue = document.getElementById('searchInput').value;
-    performSearch(searchValue);
-});
+if (document.querySelector('.search-btn')) {
+    document.querySelector('.search-btn').addEventListener('click', function() {
+        const searchValue = document.getElementById('searchInput').value;
+        performSearch(searchValue);
+    });
+}
 
 function performSearch(query) {
     if (query.trim()) {
         showNotification(`Searching for "${query}"...`);
-        // Here you would implement actual search functionality
+        // Redirect to categories with search
+        window.location.href = `categories.html?search=${query}`;
     }
 }
 
-// Category tabs
-document.querySelectorAll('.category-tab').forEach(tab => {
-    tab.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Remove active class from all tabs
-        document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
-        
-        // Add active class to clicked tab
-        this.classList.add('active');
-        
-        // Here you would filter products based on category
-        const category = this.textContent;
-        showNotification(`Showing ${category} products`);
-    });
-});
-
-// Hero banner rotation
-let currentSlide = 0;
+// Hero banner rotation (for index page)
 const slides = document.querySelectorAll('.hero-slide');
+if (slides.length > 0) {
+    let currentSlide = 0;
 
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+    }
+
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }, 5000);
 }
-
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}, 5000);
 
 // Bottom navigation
 document.querySelectorAll('.bottom-nav-item').forEach(item => {
     item.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Remove active class from all items
+        // Don't prevent default - let it navigate
         document.querySelectorAll('.bottom-nav-item').forEach(i => i.classList.remove('active'));
-        
-        // Add active class to clicked item
         this.classList.add('active');
     });
 });
 
 // Notification function
 function showNotification(message) {
-    // Create notification element
     const notification = document.createElement('div');
     notification.textContent = message;
     notification.style.cssText = `
@@ -115,48 +138,39 @@ function showNotification(message) {
     }, 2000);
 }
 
-// Add animation styles
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateX(-50%) translateY(-20px);
+// Add animation styles if not already added
+if (!document.getElementById('notification-styles')) {
+    const style = document.createElement('style');
+    style.id = 'notification-styles';
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
         }
-        to {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
+        
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
         }
-    }
-    
-    @keyframes slideOut {
-        from {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-        to {
-            opacity: 0;
-            transform: translateX(-50%) translateY(-20px);
-        }
-    }
-`;
-document.head.appendChild(style);
+    `;
+    document.head.appendChild(style);
+}
 
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Initialize
-updateCartCount();
-showSlide(0);
-
+// Initialize cart count on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCartCount);
+} else {
+    updateCartCount();
+}
